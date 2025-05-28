@@ -1,0 +1,89 @@
+*** Settings ***
+Documentation    Page Objects and Keywords for Execution Slider
+Library    SeleniumLibrary
+Resource    ../Resources/LoginResource.robot
+*** Variables ***
+${menu}                      xpath=(//span[@class='MuiTouchRipple-root css-w0pj6f'])[1]/parent::button
+${home}                      xpath=//span[text()='Home']
+${execution_slider}          xpath=//span[text()='Execution Slider']
+${assert_execution_slider}   xpath=//h4[text()='Execution Slider Panel']
+${edit}    xpath=(//button[@aria-label='edit'])[1]
+${stack}    xpath=//input[@type='text']
+${count}    xpath=//input[@type='number']
+${update_execute_slider}    xpath=//button[text()='Update Execution Slider']
+${username}    Bugslayers@gmail.com
+${password}    Bugslayers
+${searchBox}    xpath=//input[@placeholder='Search home execution highlights...']
+${search_result}    xpath=//input[@tabindex='-1']/parent::div/following-sibling::p
+${add_new_slider}    xpath=(//button[@tabindex='0'])[4]
+${img_path}    C:\\Bug_Slayers\\Bug_Slayers\\Resources\\Images\\img1.jpeg
+${drag_and_drop_img}    xpath=//p[text()='Drag and drop images here or click']
+${file_input_locator}    xpath=//input[@type='file']
+${submit_execution_slider}    xpath=//button[@type='submit']
+${delete_newstack}    xpath=(//button[@type='button'])[10]
+${delete_dialogbox}    xpath=//button[text()='Delete']
+${drop_down}    xpath=
+${drop_down_5}    xpath=//li[@data-value='5']
+${num_of_stacks}    xpath='//tr[@class='MuiTableRow-root css-1gqug66']/td[1]'
+*** Keywords ***
+Navigate To Execution Slider
+    Wait Until Element Is Visible    ${menu}    timeout=10s
+    Click Element                    ${menu}
+    Wait Until Element Is Visible    ${home}    timeout=10s
+    Click Element                    ${home}
+    Wait Until Element Is Visible    ${execution_slider}    timeout=10s
+    Click Element                    ${execution_slider}
+    Wait Until Element Is Visible    ${assert_execution_slider}    timeout=10s
+    Page Should Contain Element      ${assert_execution_slider}
+
+Validate Edit Button
+    Wait Until Element Is Visible    ${edit}    timeout=10s
+    Sleep    5
+    Click Button                     ${edit}
+    Wait Until Element Is Visible    ${stack}    timeout=10s
+    Scroll Element Into View         ${stack}
+    Click Element                    ${stack}
+    Press Keys                       NONE    CTRL+A
+    Press Keys                       NONE    DELETE
+    Sleep                            1
+    Input Text                       ${stack}    browser
+    Wait Until Element Is Visible    ${update_execute_slider}    timeout=10s
+    Click Button                    ${update_execute_slider}
+    Wait Until Element Is Visible    ${stack}    timeout=10s
+    ${updated_value}=                Get Value    ${stack}
+    Should Be Equal As Strings       ${updated_value}    browser
+Validate Edit Button Without Providing Stack
+    Wait Until Element Is Visible    ${edit}    timeout=10s
+    Sleep    5
+    Click Button                     ${edit}
+    Wait Until Element Is Visible    ${stack}    timeout=10s
+    Scroll Element Into View         ${stack}
+    Click Element                    ${stack}
+    Press Keys                       NONE    CTRL+A
+    Press Keys                       NONE    DELETE
+    Wait Until Element Is Visible    ${update_execute_slider}    timeout=10s
+    Click Button                    ${update_execute_slider}
+    Page Should Contain    Please fill out this field. 
+Validate Search Functionality
+    Click Element    ${searchBox}
+    Input Text    ${searchBox}    browser
+    Element Text Should Be    ${search_result}    1–1 of 1
+Validate Adding New Execution Slider
+    Click Button    ${add_new_slider}
+    Wait Until Element Is Visible    ${stack}    timeout=10s
+    Input Text    ${stack}    new
+    Input Text    ${count}    5
+    Click Element    xpath=//p[text()='Drag and drop images here or click']
+    Execute JavaScript    document.querySelector("input[type='file']").style.display = 'block'
+    Choose File    ${file_input_locator}    ${img_path}
+    Click Button    ${submit_execution_slider}
+Validate the Delete Functionality
+    Wait Until Element Is Visible    ${delete_newstack}    timeout=10s
+    Click Button                     ${delete_newstack}
+    Wait Until Element Is Visible    ${delete_dialogbox}    timeout=10s
+    Click Button                     ${delete_dialogbox}
+    Wait Until Page Does Not Contain    new    timeout=5s
+    Page Should Not Contain         new
+
+
+    
