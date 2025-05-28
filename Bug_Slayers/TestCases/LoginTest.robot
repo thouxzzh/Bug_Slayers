@@ -18,6 +18,6 @@ Verify login with valid credentials
     Open the browser with url
     Fill the login form    ${username}    ${password}  
     Verify the Home Page
-    close the broswer session
+    close the browser session
 
 
