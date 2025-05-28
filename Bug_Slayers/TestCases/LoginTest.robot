@@ -7,17 +7,16 @@ Resource    ../Resources/LoginResource.robot
 
 *** Variables ***
 ${username}
-${password}
+${pw}
 
 *** Test Cases ***
-verify login with valid    ${username}    ${password}
+verify login with valid    ${username}    ${pw}
 
 *** Keywords ***
 Verify login with valid credentials
-    [Arguments]    ${username}    ${password}
+    [Arguments]    ${username}    ${pw}
     Open the browser with url
-    Fill the login form    ${username}    ${password}  
+    Fill the login form    ${username}    ${pw}  
     Verify the Home Page
     close the browser session
-
 
