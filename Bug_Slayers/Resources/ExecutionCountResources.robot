@@ -19,7 +19,7 @@ Fill The Execution Count Add Form
     Input Text     ${Cnt}     ${count}
     Input Text     ${Svc}   ${service}
     Input Text     ${Slgg}      ${slug}
-    Sleep    5s
+    Sleep    6s
     Click Element    ${Submit_Execution_Count}
 
 Verify The Execution
