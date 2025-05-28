@@ -1,3 +1,0 @@
-*** Test Cases ***,${Count},${Service},${Slug}
-Valid Credentials 2,AutomationTester,robotframework
-Invalid Service 3,
