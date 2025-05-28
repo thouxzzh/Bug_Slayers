@@ -9,6 +9,6 @@ ${browser}    chrome
 Open the browser with url
     Open Browser    ${url}    ${browser}
     Maximize Browser Window
-    Set Browser Implicit Wait     5
-close the broswer session
+    Set Selenium Implicit Wait     5
+close the browser session
     Close Browser
