@@ -20,12 +20,14 @@ Validate Edit Functionality
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Execution_SliderResources.Navigate To Execution Slider
-    Execution_SliderResources.Validate Edit Button      
-Validate Edit Functionality Without Providing Stack
-    LoginResource.Fill the login form    ${username}    ${password}
-    Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
-    Execution_SliderResources.Navigate To Execution Slider
-    Execution_SliderResources.Validate Edit Button
+    Execution_SliderResources.Validate Edit Button  
+        
+# Validate Edit Functionality Without Providing Stack
+#     LoginResource.Fill the login form    ${username}    ${password}
+#     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
+#     Execution_SliderResources.Navigate To Execution Slider
+#     Execution_SliderResources.Validate Edit Functionality Without Providing Stack
+
 Validate Search Functionality 
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
@@ -41,5 +43,11 @@ Validate Delete Button Functionality
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Execution_SliderResources.Navigate To Execution Slider
     Execution_SliderResources.Validate the Delete Functionality
+Validate Rows Per Page Drop Down Button
+    LoginResource.Fill the login form    ${username}    ${password}
+    Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
+    Execution_SliderResources.Navigate To Execution Slider
+    Execution_SliderResources.Validate Rows Per Page Dropdown   
+
 
 
