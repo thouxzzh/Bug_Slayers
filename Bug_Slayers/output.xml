@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-28T10:30:43.708923" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="D:\SmartCliff_Robot\Smartcliff_RobotFramework\Bug_Slayers\TestCases\Login.robot">
+<test id="s1-t1" name="Valid credentials" line="13">
+<kw name="Verify login with valid credentials">
+<kw name="Open the browser with url" owner="GenericResources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-28T10:30:44.061256" level="INFO">Opening browser 'chrome' to base url 'https://smart-cliff-admin.vercel.app/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-28T10:30:44.061088" elapsed="3.241898"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-28T10:30:47.303239" elapsed="0.039099"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2025-05-28T10:30:47.342527" elapsed="0.001279"/>
+</kw>
+<status status="PASS" start="2025-05-28T10:30:44.060683" elapsed="3.283256"/>
+</kw>
+<kw name="Fill the login form" owner="LoginResource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-28T10:30:47.344559" level="INFO">Typing text 'Bugslayers@gmail.com' into text field 'xpath=//input[@id='signin-email']'.</msg>
+<arg>${uname}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T10:30:47.344322" elapsed="0.335290"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-28T10:30:47.680044" level="INFO">Typing password into text field 'xpath=//input[@id='signin-password']'.</msg>
+<msg time="2025-05-28T10:30:47.722529" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${pword}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T10:30:47.679817" elapsed="0.203573"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-28T10:30:47.883740" level="INFO">Clicking button 'xpath=//button[@id='signin-submit']'.</msg>
+<arg>${loginBtn}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-28T10:30:47.883553" elapsed="0.094873"/>
+</kw>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-28T10:30:47.344092" elapsed="0.634708"/>
+</kw>
+<kw name="close the broswer session" owner="GenericResources">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-28T10:30:47.979741" elapsed="2.209326"/>
+</kw>
+<status status="PASS" start="2025-05-28T10:30:47.979190" elapsed="2.210158"/>
+</kw>
+<arg>username=Bugslayers@gmail.com</arg>
+<arg>password=Bugslayers</arg>
+<status status="PASS" start="2025-05-28T10:30:44.060423" elapsed="6.129063"/>
+</kw>
+<status status="PASS" start="2025-05-28T10:30:44.059623" elapsed="6.130644"/>
+</test>
+<status status="PASS" start="2025-05-28T10:30:43.710007" elapsed="6.482966"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
