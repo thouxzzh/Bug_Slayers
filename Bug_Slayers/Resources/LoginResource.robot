@@ -8,9 +8,9 @@ ${loginBtn}    xpath=//button[@id='signin-submit']
 
 *** Keywords ***
 Fill the login form
-    [Arguments]    ${username}    ${password}
+    [Arguments]    ${username}    ${pw}
     Input Text    ${uname}    ${username}
-    Input Password    ${pword}    ${password}
+    Input Password    ${pword}    ${pw}
     Click Button    ${loginBtn}
 Verify the Home Page
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome
