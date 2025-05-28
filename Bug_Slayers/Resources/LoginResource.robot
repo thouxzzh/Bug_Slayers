@@ -13,4 +13,5 @@ Fill the login form
     Input Password    ${pword}    ${password}
     Click Button    ${loginBtn}
 Verify the Home Page
+    sleep    5
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome
