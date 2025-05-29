@@ -26,6 +26,9 @@ ${del}    xpath=//div[@class='MuiDialogActions-root MuiDialogActions-spacing css
 ${no_user}    xpath=//h6[@class='MuiTypography-root MuiTypography-h6 css-1anx036']
 ${edit_icon}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']//td[4]/button
 ${update}    xpath=//div[@class='MuiBox-root css-1d1jiby']/button[2]
+${rpp}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']/td[1]
+${dd}    xpath=//div[@class='MuiInputBase-root MuiInputBase-colorPrimary MuiTablePagination-input css-rmmij8']
+${ele_5}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']/li[1]
 
 *** Keywords ***
 Go to user setting
@@ -101,6 +104,15 @@ Verify the edited field
     [Arguments]    ${new_val}
     Search for the admin    bugslayers124@gmail.com
     Verify the admin in search result    ${new_val}
+
+click and select the rows per page
+    Click Element    ${dd}
+    Click Element    ${ele_5}
+
+verify the number of rows after filter
+    ${count}    Get Element Count    ${rpp}
+    Should Be Equal As Integers    ${count}    5
+
 
 
     
