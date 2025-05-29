@@ -88,13 +88,12 @@ click edit icon and edit the information
     [Arguments]    ${new_value}
     Click Element    ${edit_icon}
     Sleep    3
-    Wait Until Element Is Visible    xpath=//input[@name='fname']
-    Click Element    xpath=//input[@name='fname']
+    Wait Until Element Is Visible    ${fname}
+    Click Element    ${fname}
     Sleep    5
-    Press Keys    xpath=//input[@name='fname']    CTRL+A
-    Press Keys    xpath=//input[@name='fname']    DELETE
+    Press Keys    ${fname}    CTRL+A    DELETE
     Sleep    3
-    Press Keys    xpath=//input[@name='fname']    ${new_value}
+    Input Text    ${fname}    ${new_value}
     Click Button    ${update}
 
 
