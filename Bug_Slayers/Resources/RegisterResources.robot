@@ -24,6 +24,8 @@ ${bug_admin}    xpath=(//tr[@class='MuiTableRow-root css-1gqug66'])//td[2]
 ${trash}    xpath=//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorError MuiIconButton-sizeMedium css-1oh31is']
 ${del}    xpath=//div[@class='MuiDialogActions-root MuiDialogActions-spacing css-1vskg8q']/button[2]
 ${no_user}    xpath=//h6[@class='MuiTypography-root MuiTypography-h6 css-1anx036']
+${edit_icon}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']//td[4]/button
+${update}    xpath=//div[@class='MuiBox-root css-1d1jiby']/button[2]
 
 *** Keywords ***
 Go to user setting
@@ -80,7 +82,28 @@ click and confirm the delete
     Click Element    ${del}
 
 verify the deletion of the user
-    Element Text Should Be    ${no_user}    No users found    
+    Element Text Should Be    ${no_user}    No users found 
+
+click edit icon and edit the information
+    [Arguments]    ${new_value}
+    Click Element    ${edit_icon}
+    Sleep    3
+    Wait Until Element Is Visible    xpath=//input[@name='fname']
+    Click Element    xpath=//input[@name='fname']
+    Sleep    5
+    Press Keys    xpath=//input[@name='fname']    CTRL+A
+    Press Keys    xpath=//input[@name='fname']    DELETE
+    Sleep    3
+    Press Keys    xpath=//input[@name='fname']    ${new_value}
+    Click Button    ${update}
+
+
+Verify the edited field
+    [Arguments]    ${new_val}
+    Search for the admin    bugslayers124@gmail.com
+    Verify the admin in search result    ${new_val}
+
+
     
 
 

@@ -33,11 +33,13 @@ Validate Search Functionality
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Execution_SliderResources.Navigate To Execution Slider
     Execution_SliderResources.Validate Search Functionality  
+
 Validate Adding New Execution Slider
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Execution_SliderResources.Navigate To Execution Slider
     Execution_SliderResources.Validate Adding New Execution Slider
+    
 Validate Delete Button Functionality
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
