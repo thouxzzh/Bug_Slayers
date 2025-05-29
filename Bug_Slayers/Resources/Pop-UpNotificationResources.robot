@@ -73,7 +73,7 @@ Validate Search Functionality
 
 Validate Search Functionality By Providing Unrelated Keyword
     Click Element    ${searchBox}
-    Input Text    ${searchBox}    www
+    Input Text    ${searchBox}    wwwWW
     Press Keys    ${searchBox}    RETURN 
     Page Should Contain    No notifications found   
 
