@@ -1,3 +1,4 @@
+ExecutionCount1Test
 *** Settings ***
 Library           SeleniumLibrary
 Resource          ../Resources/GenericResources.robot
@@ -34,5 +35,3 @@ Delete the Executive Count Panel
     Search for the element in Navigation
     Delete the element in Executive Count
     close the browser session
-
-
