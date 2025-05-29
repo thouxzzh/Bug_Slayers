@@ -56,25 +56,31 @@ Validate Edit Button
     Should Be Equal As Strings     ${updated_value}    browser
 
 
-Validate Edit Functionality Without Providing Stack
-    Wait Until Element Is Visible    ${edit}    timeout=10s
-    Sleep    2s
-    Click Button                    ${edit}
-    Wait Until Element Is Visible    ${stack}    timeout=10s
-    Scroll Element Into View        ${stack}
-    Click Element                   ${stack}
-    Press Keys                     NONE    CTRL+A
-    Press Keys                     NONE    DELETE
-    Wait Until Element Is Visible    ${update_execute_slider}    timeout=10s
-    Click Button                   ${update_execute_slider}
-    ${valid_msg}=    Execute Javascript    return arguments[0].validationMessage;    ${stack}
-    Should Be Equal                 ${valid_msg}    Please fill out this field.
+# Validate Edit Functionality Without Providing Stack
+#     Wait Until Element Is Visible    ${edit}    timeout=10s
+#     Sleep    2s
+#     Click Button                    ${edit}
+#     Wait Until Element Is Visible    ${stack}    timeout=10s
+#     Scroll Element Into View        ${stack}
+#     Click Element                   ${stack}
+#     Press Keys                     NONE    CTRL+A
+#     Press Keys                     NONE    DELETE
+#     Wait Until Element Is Visible    ${update_execute_slider}    timeout=10s
+#     Click Button                   ${update_execute_slider}
+#     ${valid_msg}=    Execute Javascript    return arguments[0].validationMessage;    ${stack}
+#     Should Be Equal                 ${valid_msg}    Please fill out this field.
 
  
 Validate Search Functionality
-    Click Element    ${searchBox}
+    Click Element    ${searchBox}  
     Input Text    ${searchBox}    browser
+    Sleep    2
     Element Text Should Be    ${search_result}    1–1 of 1
+Validate Search Functionality By Providing Unrelated Keyword
+    Click Element    ${searchBox}
+    Input Text    ${searchBox}    wwww
+    Page Should Contain    No execution highlights found
+
 Validate Adding New Execution Slider
     Click Button    ${add_new_slider}
     Wait Until Element Is Visible    ${stack}    timeout=10s

@@ -25,7 +25,7 @@ ${Add_new}    xpath=//button[text()='Add Notification']
 ${drop_down}    xpath=//p[text()='Rows per page:']/following-sibling::div/child::div
 ${drop_down_5}    xpath=//li[@data-value='5']
 ${num_of_stacks}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']/td[1]
-${delete_popup}    xpath=(//button[@type='button'])[14]
+${delete_popup}    xpath=(//button[@type='button'])[16]
 ${delete_dialogbox}    xpath=//button[text()='Delete']
 *** Keywords ***
 Navigate To Pop Up Notification Panel
@@ -70,6 +70,12 @@ Validate Search Functionality
     END
     ${count}=    Get Length    ${LIST}
     Should Be Equal As Integers    ${count}    2
+
+Validate Search Functionality By Providing Unrelated Keyword
+    Click Element    ${searchBox}
+    Input Text    ${searchBox}    www
+    Press Keys    ${searchBox}    RETURN 
+    Page Should Contain    No notifications found   
 
 Validate Rows Per Page Dropdown
 
