@@ -6,6 +6,7 @@ Test Teardown    close the browser session
 Resource    ../Resources/GenericResources.robot
 Resource    ../Resources/LoginResource.robot
 Resource    ../Resources/Execution_SliderResources.robot
+Resource    ../Resources/Validate_BackButton_ExecutionSliderResources.robot
 
 *** Variables ***
 ${username}    Bugslayers@gmail.com
@@ -57,6 +58,10 @@ Validate Rows Per Page Drop Down Button
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Execution_SliderResources.Navigate To Execution Slider
     Execution_SliderResources.Validate Rows Per Page Dropdown   
-
+Validate Back Button On the Add New Slider Page
+    LoginResource.Fill the login form    ${username}    ${password}
+    Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
+    Execution_SliderResources.Navigate To Execution Slider
+    Execution_SliderResources.Validate Back Buton On Add New Slider Page
 
 

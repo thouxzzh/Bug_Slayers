@@ -27,6 +27,7 @@ ${drop_down_5}    xpath=//li[@data-value='5']
 ${num_of_stacks}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']/td[1]
 ${delete_popup}    xpath=(//button[@type='button'])[16]
 ${delete_dialogbox}    xpath=//button[text()='Delete']
+${back_button}    xpath=//button[text()='Back']
 *** Keywords ***
 Navigate To Pop Up Notification Panel
     Wait Until Element Is Visible    ${menu}    timeout=10s
@@ -126,3 +127,8 @@ Validate the Delete Functionality
     Click Button                        ${delete_dialogbox}
     Wait Until Page Does Not Contain    pop-up    timeout=5s
     Page Should Not Contain         pop-up
+Validate Back Buton On Pop p Notification Page
+    Click Button    ${Add_new}
+    Click Button    ${back_button}
+    Wait Until Element Is Visible    ${assert_pop_up_panel}    timeout=10s
+    Page Should Contain Element      ${assert_pop_up_panel}
