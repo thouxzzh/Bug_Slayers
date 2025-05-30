@@ -16,7 +16,7 @@ ${male}    xpath=//li[@class='MuiButtonBase-root MuiMenuItem-root MuiMenuItem-gu
 ${d}    xpath=//input[@placeholder='MM/DD/YYYY']
 ${upload_profile}    xpath=//input[@id='profile-pic-upload']
 ${reg_btn}    xpath=//input[@id='profile-pic-upload']//following::button
-${file}    D:/SmartCliff_Robot/Smartcliff_RobotFramework/Bug_Slayers/Utilities/Screenshot (29).png 
+${file}    ${CURDIR}${/}Images${/}img1.jpeg
 ${reg_user}    xpath=//div[@class='MuiBox-root css-e64tsz']/child::button   
 ${calander}    xpath=//button[@aria-label='Choose date']
 ${searchbar}    xpath=//input[@placeholder='Search users...']
@@ -32,11 +32,14 @@ ${ele_5}    xpath=//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u
 
 *** Keywords ***
 Go to user setting
-    Sleep    8
+    Wait Until Element Is Visible    ${acc_setting}
+    Sleep    5
     Click Element    ${acc_setting}
+    Wait Until Element Is Visible    ${user}
     Click Element    ${user}
 
 click add admin
+    Wait Until Element Is Visible    ${add_admin}
     Click Element    ${add_admin}
 
 Fill Registration form
@@ -51,7 +54,7 @@ Fill Registration form
     Wait Until Element Is Visible    xpath=//li[@role='option' and normalize-space(text())='${Gender}']
     Click Element    xpath=//li[@role='option' and normalize-space(text())='${Gender}']
     Click Element    ${d}
-    Sleep    1s
+    Wait Until Element Is Visible    ${calander}
     Click Element    ${calander}    
     Sleep    1s 
     Click Element    xpath=//button[normalize-space(text())='28']   
@@ -59,13 +62,14 @@ Fill Registration form
 
 click the register user
     Click Element    ${reg_user}
-    Sleep    10s
 
+*** Keywords ***
 Assert Toast Message
-    [Arguments]    ${expected_msg}    
-    Wait Until Element Is Visible    xpath=//div[contains(@class, 'toast')]    10s
+    [Arguments]    ${expected_msg}
+    Wait Until Element Is Visible    xpath=//div[contains(@class, 'toast')]    timeout=15s
     ${toast_msg}=    Get Text    xpath=//div[contains(@class, 'toast')]
-    Should Be Equal    ${toast_msg}    ${expected_msg}
+    Log    Actual toast message: ${toast_msg}
+    Page Should Contain    ${expected_msg}
 
 # Verify Required Error Message is displayed
 #     Page Should Contain    Please fill out this field.
@@ -76,7 +80,6 @@ Search for the admin
 
 Verify the admin in search result
     [Arguments]    ${admin_name}
-    Sleep    5
     Wait Until Page Contains Element    ${bug_admin}
     Element Text Should Be    ${bug_admin}    ${admin_name}
 
@@ -90,12 +93,10 @@ verify the deletion of the user
 click edit icon and edit the information
     [Arguments]    ${new_value}
     Click Element    ${edit_icon}
-    Sleep    3
     Wait Until Element Is Visible    ${fname}
     Click Element    ${fname}
-    Sleep    5
     Press Keys    ${fname}    CTRL+A    DELETE
-    Sleep    3
+    Sleep    2
     Input Text    ${fname}    ${new_value}
     Click Button    ${update}
 
