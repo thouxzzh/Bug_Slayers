@@ -9,17 +9,15 @@ ${Testimonial}         xpath=(//span[@class='MuiTypography-root MuiTypography-bo
 ${Add_Button}    xpath=//span[@class='MuiButton-startIcon MuiButton-iconSizeMedium css-6xugel']
 ${Back_Button}    xpath=(//button[@type='button'])[4]
 ${sch_Bn}    xpath=//input[@type='text']
-# ${Search_Button}    xpath=//input[@class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedStart css-162edyi']
-# ${Count}                    xpath=(//input[@class='MuiInputBase-input MuiOutlinedInput-input css-1x5jdmq'])[1]
 ${Ed_bn}    xpath=(//div[@class='MuiBox-root css-18lah6a']/child::button)[1]
 ${rvw}    xpath=//textarea[@name='review']
 ${update_Tes_Count}    xpath=//button[@type='submit']
 ${bth}     xpath=//input[@name='batch']
-# ${delete_Exe}    xpath=(//button[@type='button'])[6]
-# ${del_button}    xpath=//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeMedium MuiButton-containedSizeMedium css-1ecefdc']
-# ${Pagination_Dropdown}     xpath=//div[@role='combobox']
-# ${Rows_Option_5}           xpath=//li[text()='5']
-# ${Table_Rows}              xpath=//table//tbody/tr
+${delete_Exe}    xpath=(//button[@type='button'])[6]
+${del_butt}    xpath=//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedError MuiButton-sizeMedium MuiButton-containedSizeMedium css-1ecefdc']
+${Pagination_Dropdown}     xpath=//div[@role='combobox']
+${Rows_Option_5}           xpath=//li[text()='5']
+${Table_Rows}              xpath=//table//tbody/tr
 
 *** Keywords ***
 Navigate to the Testimonials Overview
@@ -57,4 +55,21 @@ Edit the element in Testimonial
     Sleep    3s  
     Click Button    ${update_Tes_Count}
     Page Should Contain    Intelligence and great work
+
+Verify Testimonial Pagination Row Count
+    [Arguments]    ${row_count}
+    Click Element    ${Pagination_Dropdown}
+    Wait Until Page Contains Element    xpath=//li[text()='${row_count}']
+    Click Element    xpath=//li[text()='${row_count}']
+    Sleep    1s
+    ${rows}=    Get Element Count    ${Table_Rows}
+    Should Be Equal As Integers    ${rows}    ${row_count}
+
+Delete the element in Testimonial
+    Click Element    ${delete_Exe}
+    Wait Until Element Is Enabled    ${del_butt}
+    Click Button    ${del_butt}
+    Page Should Contain    No testimonials found
+
+
 
