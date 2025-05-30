@@ -33,13 +33,14 @@ Navigate to the Testimonials Overview
 Navigate to the Testimonial Add Form
     Click Element    ${Add_Button}
     Wait Until Page Contains Element    xpath=//h4[text()='Testimonial Add Form']
-    Page Should Contain    Testimonial Add Form  
+    Page Should Contain    Testimonial Add Form
 
 Back to the Testimonials Overview 
     Click Element    ${Back_Button}
     Page Should Contain    Testimonials Overview
 
 Search for the element in Testimonial Overview
+    Sleep    5s
     Input Text    ${sch_Bn}    John
     Wait Until Page Contains    John
     Page Should Contain    John

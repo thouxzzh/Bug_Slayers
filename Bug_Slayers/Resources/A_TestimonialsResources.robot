@@ -21,5 +21,5 @@ Fill The Testimonial Data Form
     Input Text     ${rle}        ${Role}
     Input Text     ${rvw}        ${Review}
     Choose File    (//div[@class='MuiDropzoneArea-root']//input)[1]    ${Image}   
-    Sleep    5s
     Click Element    ${Submit_Testimonial_Data}
+
