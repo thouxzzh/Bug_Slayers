@@ -57,7 +57,6 @@ Verify Pagination Row Count
     Click Element    ${Pagination_Dropdown}
     Wait Until Page Contains Element    xpath=//li[text()='${row_count}']
     Click Element    xpath=//li[text()='${row_count}']
-    Sleep    1s
     ${rows}=    Get Element Count    ${Table_Rows}
     Should Be Equal As Integers    ${rows}    ${row_count}
 
