@@ -21,7 +21,13 @@ Verify Execution Count Functionality
     Verify the Navigation
     Fill The Execution Count Add Form    ${count}    ${service}    ${slug}
     Sleep     5s
-    Verify The Execution    ${service}
+    IF    '${count}'=="" or '${service}'=="" or '${slug}'==""
+        Location Should Be    https://smart-cliff-admin.vercel.app/home/service-count-add
+    ELSE
+        Verify The Execution    ${service}
+    END
     Sleep     5s
     Close the browser session
+
+
 
