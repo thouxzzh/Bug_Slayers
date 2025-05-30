@@ -26,6 +26,7 @@ ${delete_dialogbox}    xpath=//button[text()='Delete']
 ${drop_down}    xpath=//p[text()='Rows per page:']/following-sibling::div/child::div
 ${drop_down_5}    xpath=//li[@data-value='5']
 ${num_of_stacks}    xpath=//tr[@class='MuiTableRow-root css-1gqug66']/td[1]
+${back_button}    //button[text()='Back']
 *** Keywords ***
 Navigate To Execution Slider
     Wait Until Element Is Visible    ${menu}    timeout=10s
@@ -107,4 +108,8 @@ Validate Rows Per Page Dropdown
     ${actual_count}=    Get Element Count    ${num_of_stacks}
     Should Be Equal As Integers    ${actual_count}    5
 
-    
+Validate Back Buton On Add New Slider Page
+    Click Button    ${add_new_slider}
+    Click Button    ${back_button}
+    Wait Until Element Is Visible    ${assert_execution_slider}    timeout=10s
+    Page Should Contain Element      ${assert_execution_slider}    

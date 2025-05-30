@@ -10,14 +10,11 @@ Resource    ../Resources/Pop-UpNotificationResources.robot
 *** Variables ***
 ${username}    Bugslayers@gmail.com
 ${password}    Bugslayers
-
 *** Test Cases ***
 Execute Execution Slider Test
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Pop-UpNotificationResources.Navigate To Pop Up Notification Panel
-
-    
 Validate Edit Functionality
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
@@ -38,9 +35,13 @@ Validate Toggle Button Disabled After Clicking
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Pop-UpNotificationResources.Navigate To Pop Up Notification Panel
     Pop-UpNotificationResources.Validate Toggle Checkboxes Are Disabled After Click    
-
 Validate Toggle Button Enabled After Clicking
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Pop-UpNotificationResources.Navigate To Pop Up Notification Panel
     Pop-UpNotificationResources.Validate Toggle Checkboxes Are Enabled After Click        
+Validate Back Button On the Pop Up Notification Page
+    LoginResource.Fill the login form    ${username}    ${password}
+    Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
+    Pop-UpNotificationResources.Navigate To Pop Up Notification Panel
+    Pop-UpNotificationResources.Validate Back Buton On Pop p Notification Page
