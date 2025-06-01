@@ -19,7 +19,5 @@ Verify Testimonial Functionality With Data
     Navigate to the Testimonials Overview
     Navigate to the Testimonial Add Form
     Fill The Testimonial Data Form    ${Name}    ${Ratings}    ${Batch}    ${Role}    ${Review}   
-    # Sleep    5s
     Search for the element in Testimonial Overview
-    # Sleep    5s
     Close the browser session
