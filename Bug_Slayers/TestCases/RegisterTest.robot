@@ -4,6 +4,7 @@ Library    DataDriver    file=D:/SmartCliff_Robot/Smartcliff_RobotFramework/Bug_
 Resource    ../Resources/GenericResources.robot
 Resource    ../Resources/RegisterResources.robot
 Resource    ../Resources/LoginResource.robot
+Test Template    Verify the user can add new admin    
 
 *** Variables ***
 ${Firstname}
@@ -16,11 +17,11 @@ ${DOB}
 
 *** Test Cases ***
 Add Admin Test
-    [Template]    Verify the user can add new admin
-    ${Firstname}    ${Lastname}    ${Email}    ${Phone}    ${Password}    ${Gender}    ${DOB}
+    Add admin with ${Firstname}    ${Lastname}    ${Email}    ${Phone}    ${Password}    ${Gender}    ${DOB}
    
 *** Keywords ***
 Verify the user can add new admin
+    [tags]    smoke
     [Arguments]    ${Firstname}    ${Lastname}    ${Email}    ${Phone}    ${Password}    ${Gender}    ${DOB}  
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers

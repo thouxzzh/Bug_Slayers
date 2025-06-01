@@ -5,8 +5,8 @@ Resource    ../Resources/WCUResources.robot
 Resource    ../Resources/LoginResource.robot
 
 *** Test Cases ***
-
 Verify why we choose us page
+    [tags]    smoke
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Sleep    5
@@ -16,6 +16,7 @@ Verify why we choose us page
     Page Should Contain    Why Choose Us Panel
 
 verify the user can add New WCU
+    [tags]    smoke
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Sleep    5
@@ -29,6 +30,7 @@ verify the user can add New WCU
     close the browser session
 
 Verify the user can search WCU
+    [tags]    Sanity
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Sleep    5
@@ -39,6 +41,7 @@ Verify the user can search WCU
     Verify the search result   
 
 Verify the user can edit WCU fields
+    [tags]    Regression
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Sleep    5
@@ -51,6 +54,7 @@ Verify the user can edit WCU fields
     
 
 Verify the user can delete the WCU seaction
+    [tags]    Regression
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Sleep    5
