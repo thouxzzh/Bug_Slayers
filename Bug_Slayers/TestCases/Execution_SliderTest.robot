@@ -41,28 +41,28 @@ Validate Search Functionality By Providing Unrelated Keyword
     Execution_SliderResources.Validate Search Functionality By Providing Unrelated Keyword 
 
 Validate Adding New Execution Slider
-    [Tags]    sanitary
+    [Tags]    sanity
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Execution_SliderResources.Navigate To Execution Slider
     Execution_SliderResources.Validate Adding New Execution Slider
  
-# Validate Delete Button Functionality
-#     [Tags]    regression
-#     LoginResource.Fill the login form    ${username}    ${password}
-#     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
-#     Execution_SliderResources.Navigate To Execution Slider
-#     Execution_SliderResources.Validate the Delete Functionality
+Validate Delete Button Functionality
+    [Tags]    regression
+    LoginResource.Fill the login form    ${username}    ${password}
+    Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
+    Execution_SliderResources.Navigate To Execution Slider
+    Execution_SliderResources.Validate the Delete Functionality
 
 Validate Rows Per Page Drop Down Button
-    [Tags]    sanitary
+    [Tags]    sanity
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Execution_SliderResources.Navigate To Execution Slider
     Execution_SliderResources.Validate Rows Per Page Dropdown   
 
 Validate Back Button On the Add New Slider Page
-    [Tags]    sanitary
+    [Tags]    sanity
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Execution_SliderResources.Navigate To Execution Slider
