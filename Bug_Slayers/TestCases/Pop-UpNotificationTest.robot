@@ -33,7 +33,7 @@ Validate Search Functionality
     Pop-UpNotificationResources.Validate Search Functionality   
 
 Validate Rows Per Page Dropdown Functionality
-    [Tags]    sanitary
+    [Tags]    sanity
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Pop-UpNotificationResources.Navigate To Pop Up Notification Panel
@@ -54,7 +54,7 @@ Validate Toggle Button Enabled After Clicking
     Pop-UpNotificationResources.Validate Toggle Checkboxes Are Enabled After Click        
 
 Validate Back Button On the Pop Up Notification Page
-    [Tags]    sanitary
+    [Tags]    sanity
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Pop-UpNotificationResources.Navigate To Pop Up Notification Panel
