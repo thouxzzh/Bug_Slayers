@@ -72,5 +72,5 @@ Delete the element in Testimonial
     Click Element    ${delete_Exe}
     Wait Until Element Is Enabled    ${del_button}    timeout=10s
     Click Button    ${del_button}
-    Wait Until Page Contains    No testimonials found    timeout=10s
+    # Wait Until Page Contains    No testimonials found    timeout=10s
     Page Should Contain    No testimonials found
