@@ -32,6 +32,8 @@ Go to menu
 Click Home and select why choose us
     Wait Until Element Is Visible    ${home}
     Click Element    ${home}
+    Wait Until Element Is Visible   ${wcu}
+    Sleep    1s
     Click Element    ${wcu}
 
 click add new new WCU
