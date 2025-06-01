@@ -16,7 +16,10 @@ verify login with valid
 
 *** Keywords ***
 Verify login with valid credentials
+<<<<<<< HEAD
     [tags]    smoke
+=======
+>>>>>>> bec019ebc1d929a8bf3645fee54888b46eb957e0
     [Arguments]    ${username}    ${pw}
     Open the browser with url
     Fill the login form    ${username}    ${pw} 

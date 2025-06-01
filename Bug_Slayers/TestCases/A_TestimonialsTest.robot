@@ -8,6 +8,10 @@ Resource          ../Resources/A_TestimonialsResources.robot
 
 *** Test Cases ***
 Verify Testimonial Functionality
+<<<<<<< HEAD
+=======
+    [Tags]    sanity
+>>>>>>> bec019ebc1d929a8bf3645fee54888b46eb957e0
     [Template]    Verify Testimonial Functionality With Data
     ${Name}    ${Ratings}    ${Batch}    ${Role}    ${Review}   
 

@@ -108,6 +108,15 @@ Verify the edited field
 click and select the rows per page
     Click Element    ${dd}
     Click Element    ${ele_5}
+<<<<<<< HEAD
+=======
+
+verify the number of rows after filter
+    ${count}    Get Element Count    ${rpp}
+    Should Be Equal As Integers    ${count}    5
+
+
+>>>>>>> bec019ebc1d929a8bf3645fee54888b46eb957e0
 
 verify the number of rows after filter
     ${count}    Get Element Count    ${rpp}

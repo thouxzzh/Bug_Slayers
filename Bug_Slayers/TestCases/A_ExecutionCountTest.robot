@@ -9,6 +9,7 @@ Resource          ../Resources/ExecutionCount1Resources.robot
 
 *** Test Cases ***
 Verify Execution count
+    [Tags]    sanity
     [Template]    Verify Execution Count Functionality
     ${count}    ${service}    ${slug}
 

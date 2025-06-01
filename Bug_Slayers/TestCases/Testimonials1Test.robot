@@ -8,6 +8,10 @@ Resource          ../Resources/Testimonials1Resources.robot
 
 *** Test Cases ***
 Verify the Navigation in Testimonial Panel
+<<<<<<< HEAD
+=======
+    [Tags]    smoke
+>>>>>>> bec019ebc1d929a8bf3645fee54888b46eb957e0
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
@@ -16,6 +20,10 @@ Verify the Navigation in Testimonial Panel
     Close the browser session
 
 Verify the Search in Testimonial Panel
+<<<<<<< HEAD
+=======
+    [Tags]    sanity
+>>>>>>> bec019ebc1d929a8bf3645fee54888b46eb957e0
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
@@ -23,6 +31,10 @@ Verify the Search in Testimonial Panel
     close the browser session
 
 Edit the Element in Testimonial Panel
+<<<<<<< HEAD
+=======
+    [Tags]    regression
+>>>>>>> bec019ebc1d929a8bf3645fee54888b46eb957e0
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
@@ -31,6 +43,10 @@ Edit the Element in Testimonial Panel
     close the browser session
 
 Verify Pagination Options in Testimonial
+<<<<<<< HEAD
+=======
+    [Tags]    regression
+>>>>>>> bec019ebc1d929a8bf3645fee54888b46eb957e0
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
@@ -38,6 +54,10 @@ Verify Pagination Options in Testimonial
     close the browser session
 
 Delete the Element in Testimonial Panel
+<<<<<<< HEAD
+=======
+    [Tags]    regression
+>>>>>>> bec019ebc1d929a8bf3645fee54888b46eb957e0
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
