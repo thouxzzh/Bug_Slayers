@@ -20,14 +20,11 @@ Verify Execution Count Functionality
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Verify the Navigation
     Fill The Execution Count Add Form    ${count}    ${service}    ${slug}
-    Sleep     5s
     IF    '${count}'=="" or '${service}'=="" or '${slug}'==""
         Location Should Be    https://smart-cliff-admin.vercel.app/home/service-count-add
     ELSE
         Verify The Execution    ${service}
     END
-    Sleep     5s
     Close the browser session
-
 
 
