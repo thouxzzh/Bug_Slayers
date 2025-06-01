@@ -8,6 +8,7 @@ Resource          ../Resources/Testimonials1Resources.robot
 
 *** Test Cases ***
 Verify the Navigation in Testimonial Panel
+    [Tags]    smoke
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
@@ -16,6 +17,7 @@ Verify the Navigation in Testimonial Panel
     Close the browser session
 
 Verify the Search in Testimonial Panel
+    [Tags]    sanity
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
@@ -23,6 +25,7 @@ Verify the Search in Testimonial Panel
     close the browser session
 
 Edit the Element in Testimonial Panel
+    [Tags]    regression
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
@@ -31,6 +34,7 @@ Edit the Element in Testimonial Panel
     close the browser session
 
 Verify Pagination Options in Testimonial
+    [Tags]    regression
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
@@ -38,6 +42,7 @@ Verify Pagination Options in Testimonial
     close the browser session
 
 Delete the Element in Testimonial Panel
+    [Tags]    regression
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
     Navigate to the Testimonials Overview
