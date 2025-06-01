@@ -19,11 +19,13 @@ ${Linkk}
 
 
 *** Test Cases ***
+
 Validate the Adding New Pop Up Notification Panel    ${Tit}    ${Descrp}    ${Button}    ${Linkk}
 
 
 *** Keywords ***
 Validate the Adding New Pop Up Notification Panel
+    [Tags]    regression
     LoginResource.Fill the login form    ${username}    ${password}
     Wait Until Location Is    https://smart-cliff-admin.vercel.app/adminHome    timeout=15s
     Pop-UpNotificationResources.Navigate To Pop Up Notification Panel
