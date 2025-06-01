@@ -1,2 +1,5 @@
 *TestCases*,${username},${pw}
 Valid credentials,Bugslayers@gmail.com,Bugslayers
+empty_user,,Bugslayers
+empty_password,Bugslayers@gmail.com,,
+incorrect,gjbi,tych

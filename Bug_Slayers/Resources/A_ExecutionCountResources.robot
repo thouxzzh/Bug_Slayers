@@ -19,11 +19,13 @@ Fill The Execution Count Add Form
     Input Text     ${Cnt}     ${count}
     Input Text     ${Svc}   ${service}
     Input Text     ${Slgg}      ${slug}
-    Sleep    6s
     Click Element    ${Submit_Execution_Count}
+    Sleep    5s
+    
 
 Verify The Execution
     [Arguments]    ${expected_value}
+
     ${execution_items}=    Get WebElements    xpath=//tr[@class='MuiTableRow-root css-1gqug66']/td[2]
     ${actual_items}=       Create List
     FOR    ${item}    IN    @{execution_items}
@@ -32,5 +34,5 @@ Verify The Execution
         Append To List    ${actual_items}    ${name}
     END
     List Should Contain Value    ${actual_items}    ${expected_value}
-
+    Sleep    5s
 
