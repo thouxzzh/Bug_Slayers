@@ -1,4 +1,3 @@
-ExecutionCount1Test
 *** Settings ***
 Library           SeleniumLibrary
 Resource          ../Resources/GenericResources.robot
