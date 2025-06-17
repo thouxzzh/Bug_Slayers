@@ -19,6 +19,7 @@ Verify Execution Count Functionality
     [Arguments]    ${count}    ${service}    ${slug}
     Open the browser with url
     Fill the login form    Bugslayers@gmail.com    Bugslayers
+    Sleep    5s
     Verify the Navigation
     Fill The Execution Count Add Form    ${count}    ${service}    ${slug}
     Sleep     5s

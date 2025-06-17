@@ -7,7 +7,7 @@ ${Cnt}                    xpath=//input[@id='count']
 ${Svc}                  xpath=//input[@id='service']
 ${Slgg}                     xpath=//input[@id='slug']
 ${Submit_Execution_Count}    xpath=//span[text()='Submit Execution Count']
-${Menu}                    xpath=//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-q6oun']
+${Menu}                    xpath=(//button[@type='button'])[1]
 ${Home}                    xpath=(//li[@class='MuiListItem-root MuiListItem-gutters css-bkmufr']//div)[1]
 ${Execution_Count}         xpath=(//div[@class='MuiList-root css-1uzmcsd']//div)[1]
 ${Add_Button}    xpath=//span[@class='MuiButton-startIcon MuiButton-iconSizeMedium css-6xugel']
@@ -20,6 +20,7 @@ Fill The Execution Count Add Form
     Input Text     ${Svc}   ${service}
     Input Text     ${Slgg}      ${slug}
     Click Element    ${Submit_Execution_Count}
+    Sleep    5s
 
 
 Verify The Execution
@@ -31,4 +32,5 @@ Verify The Execution
         Log To Console    Item found: ${name}
         Append To List    ${actual_items}    ${name}
     END
+    Sleep    5s
     List Should Contain Value    ${actual_items}    ${expected_value}
