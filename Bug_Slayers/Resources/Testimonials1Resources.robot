@@ -3,7 +3,8 @@ Library    SeleniumLibrary
 Library    Collections
 
 *** Variables ***
-${Menu}                    xpath=//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-q6oun']
+# ${Menu}                    xpath=//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-q6oun']
+${Menu}                    xpath=(//button[@type='button'])[1]
 ${Home}                    xpath=(//li[@class='MuiListItem-root MuiListItem-gutters css-bkmufr']//div)[1]
 ${Testimonial}            xpath=(//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-1wnjc62'])[3]
 ${Add_Button}             xpath=//span[@class='MuiButton-startIcon MuiButton-iconSizeMedium css-6xugel']
